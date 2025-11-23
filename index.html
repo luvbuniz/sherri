@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academic Portfolio of Dr. Sherri Schieferstein - ASL Educator and Deaf Education Specialist.">
+    <title>Dr. Sherri Schieferstein | ASL Educator & Deaf Education Specialist</title>
+   
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-slate: #2c3e50;
+            --secondary-slate: #34495e;
+            --accent-teal: #14b8a6;
+            --accent-teal-dark: #0f766e;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --container-width: 1200px;
+            --nav-height: 80px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-slate);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-teal);
+            color: white;
+            border: 2px solid var(--accent-teal);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-teal-dark);
+            border-color: var(--accent-teal-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-slate);
+            border: 2px solid var(--primary-slate);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-slate);
+            color: white;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-teal);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: var(--bg-white);
+            height: var(--nav-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-slate);
+        }
+
+        .logo span {
+            color: var(--accent-teal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--secondary-slate);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-teal);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding-top: calc(var(--nav-height) + 60px);
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, var(--bg-light) 50%, #e2e8f0 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-slate);
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 35px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1 / 1;
+            margin: 0 auto;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 20px 20px 0px var(--primary-slate);
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .bio-text h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .bio-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .education-card {
+            background: var(--bg-white);
+            padding: 25px;
+            border-left: 4px solid var(--accent-teal);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .education-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .education-card span {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+       
+        .role-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary-slate);
+        }
+       
+        .role-list li::before {
+            content: '•';
+            color: var(--accent-teal);
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -4px;
+        }
+
+        /* --- PHILOSOPHY SECTION --- */
+        .philosophy-bg {
+            background-color: var(--primary-slate);
+            color: white;
+        }
+
+        .philosophy-bg .section-title h2 {
+            color: white;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .philosophy-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+       
+        .icon-box svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        .philosophy-card h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .philosophy-card p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        /* --- COURSES SECTION --- */
+        .courses-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .course-list {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .course-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .course-item:last-child {
+            border-bottom: none;
+        }
+       
+        .course-item svg {
+            stroke: var(--accent-teal);
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .sample-module {
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .module-header {
+            background-color: var(--secondary-slate);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+       
+        .module-content h4 {
+            color: var(--accent-teal-dark);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .bullet-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .bullet-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-teal);
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 9px;
+        }
+
+        /* --- EXPERTISE SECTION --- */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .expertise-item {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        .expertise-item svg {
+            stroke: var(--accent-teal);
+            width: 24px;
+            height: 24px;
+        }
+       
+        .expertise-item span {
+            font-weight: 600;
+            color: var(--primary-slate);
+        }
+
+        /* --- ACCESSIBILITY SECTION --- */
+        .accessibility-section {
+            background-color: #f0fdfa; /* Light teal tint */
+            border-top: 1px solid #ccfbf1;
+            border-bottom: 1px solid #ccfbf1;
+        }
+
+        .a11y-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .a11y-standards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background-color: var(--accent-teal);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-form {
+            text-align: left;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-slate);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+       
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+        }
+
+        .resume-note {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f1f5f9;
+            border-radius: 5px;
+            color: var(--secondary-slate);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-slate);
+            color: #94a3b8;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content p {
+            font-size: 0.9rem;
+        }
+
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 35px auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .profile-img-container {
+                max-width: 300px;
+                margin-top: 40px;
+            }
+
+            .about-grid, .courses-layout, .a11y-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+           
+            .mobile-menu-btn svg {
+                width: 30px;
+                height: 30px;
+                stroke: var(--primary-slate);
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                padding-top: 100px;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.3s ease-in-out;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+           
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Dr. Sherri <span>Schieferstein</span></div>
+                <div class="mobile-menu-btn" onclick="toggleMenu()">
+                    <!-- Hamburger Icon SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#philosophy" onclick="toggleMenu()">Philosophy</a></li>
+                    <li><a href="#courses" onclick="toggleMenu()">Courses</a></li>
+                    <li><a href="#expertise" onclick="toggleMenu()">Expertise</a></li>
+                    <li><a href="#accessibility" onclick="toggleMenu()">Accessibility</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Dr. Sherri Schieferstein</h1>
+                    <span class="subtitle">ASL Educator & Deaf Education Specialist</span>
+                    <p>Dedicated higher-education faculty member specializing in accessible curriculum design, American Sign Language instruction, and the advancement of Deaf culture within inclusive learning environments.</p>
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn btn-primary">About Me</a>
+                        <a href="#courses" class="btn btn-outline">View Courses</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-img-container">
+                        <!-- Sherri's headshot -->
+                        <img src="work pic.png" alt="Dr. Sherri Schieferstein" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="education-column">
+                    <h3 style="margin-bottom: 25px;">Education</h3>
+                    <div class="education-card">
+                        <h4>Ed.D. Exceptional Student Education</h4>
+                        <span>Doctor of Education</span>
+                    </div>
+                    <div class="education-card">
+                        <h4>Ed.S. Exceptional Student Education</h4>
+                        <span>Educational Specialist</span>
+                    </div>
+                    <div class="education-card">
+                        <h4>M.S. Deaf/Hard of Hearing Education</h4>
+                        <span>Master of Science</span>
+                    </div>
+                    <div class="education-card">
+                        <h4>B.A. Multidisciplinary Studies</h4>
+                        <span>Concentration: Child Life Specialist / Medical Play Therapy</span>
+                    </div>
+                    <div class="education-card">
+                        <h4>A.A.S. Interpreting for the Deaf</h4>
+                        <span>Associate of Applied Science</span>
+                    </div>
+                </div>
+                <div class="bio-text">
+                    <h3>Professional Profile</h3>
+                    <p>With a robust academic background spanning doctoral research in Exceptional Student Education to hands-on experience as an interpreter, I bring a holistic perspective to the higher-education classroom. My work is grounded in the belief that language acquisition serves as a gateway to cultural understanding and advocacy.</p>
+                    <p>I operate effectively at the intersection of pedagogy and practice, serving as:</p>
+                    <ul class="role-list">
+                        <li>A higher-ed ASL educator fostering fluency and confidence.</li>
+                        <li>A curriculum specialist designing rigorous, standards-based courses.</li>
+                        <li>A Deaf culture advocate promoting awareness and equity.</li>
+                        <li>An online-learning accessibility specialist ensuring WCAG compliance.</li>
+                        <li>A faculty-ready instructor prepared for hybrid and remote modalities.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY SECTION -->
+    <section id="philosophy" class="section-padding philosophy-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Teaching Philosophy</h2>
+            </div>
+            <div class="philosophy-grid">
+                <!-- Visual Immersion -->
+                <div class="philosophy-card">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h4>Visual Immersion</h4>
+                    <p>Prioritizing a "voice-off" environment that encourages students to think spatially and visually, mirroring the natural acquisition of signed languages.</p>
+                </div>
+
+                <!-- Deaf-Centric Respect -->
+                <div class="philosophy-card">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div>
+                    <h4>Deaf Cultural Respect</h4>
+                    <p>Teaching ASL not just as a code, but as the living heartbeat of the Deaf community, rooted in history, identity, and shared experience.</p>
+                </div>
+
+                <!-- UDL Principles -->
+                <div class="philosophy-card">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                        </svg>
+                    </div>
+                    <h4>Accessibility First & UDL</h4>
+                    <p>Applying Universal Design for Learning principles to ensure course materials are accessible to all learners from day one.</p>
+                </div>
+
+                <!-- Student Centered -->
+                <div class="philosophy-card">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                        </svg>
+                    </div>
+                    <h4>Inclusive Pedagogy</h4>
+                    <p>Creating a safe, trauma-informed learning space where mistakes are viewed as essential steps in the language learning journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES SECTION -->
+    <section id="courses" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Courses & Curriculum</h2>
+            </div>
+            <div class="courses-layout">
+                <!-- Course List -->
+                <div class="course-list">
+                    <h3>Core Courses Taught</h3>
+                    <div class="course-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        <span>American Sign Language I – IV</span>
+                    </div>
+                    <div class="course-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        <span>Introduction to Deaf Culture</span>
+                    </div>
+                    <div class="course-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        <span>ASL Linguistics</span>
+                    </div>
+                    <div class="course-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        <span>Introduction to Interpreting</span>
+                    </div>
+                    <div class="course-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        <span>Fingerspelling & Numbering</span>
+                    </div>
+                    <div class="course-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        <span>Communication in the Deaf Community</span>
+                    </div>
+                    <div class="course-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        <span>Special Topics in Deaf Education</span>
+                    </div>
+                </div>
+
+                <!-- Sample Module -->
+                <div class="sample-module">
+                    <div class="module-header">
+                        <h3 style="color: white; margin:0; font-size: 1.2rem;">Sample Curriculum: ASL II Hybrid Module</h3>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>Topic:</strong> Spatial Referencing & Classifiers</p>
+                       
+                        <h4>Weekly Learning Objectives</h4>
+                        <ul class="bullet-list">
+                            <li>Demonstrate the correct handshape, location, and movement for descriptive classifiers (DCLs).</li>
+                            <li>Utilize spatial mapping to describe the layout of a room or environment.</li>
+                            <li>Comprehend and gloss a native signer's description of a physical object.</li>
+                        </ul>
+
+                        <h4>Module Components</h4>
+                        <ul class="bullet-list">
+                            <li><strong>Async Video Lecture:</strong> "Defining Space: The Viewer's Perspective."</li>
+                            <li><strong>Interactive Assessment:</strong> Video response submission identifying 5 objects via classifier description.</li>
+                            <li><strong>Live Lab:</strong> Peer-to-peer "Info Gap" activity describing floor plans without voice.</li>
+                            <li><strong>Culture Corner:</strong> Analysis of Deaf architecture and "Deaf Space" principles.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERTISE SECTION -->
+    <section id="expertise" class="section-padding" style="background-color: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Areas of Expertise</h2>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>Curriculum Development</span>
+                </div>
+                <div class="expertise-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>Video-based ASL Assessment</span>
+                </div>
+                <div class="expertise-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>Online & Hybrid Pedagogy</span>
+                </div>
+                <div class="expertise-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>Interpreting Theory</span>
+                </div>
+                <div class="expertise-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>Supporting Deaf/HH Learners</span>
+                </div>
+                <div class="expertise-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>Accessible Material Design</span>
+                </div>
+                <div class="expertise-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>Faculty Mentoring</span>
+                </div>
+                <div class="expertise-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>Program Evaluation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCESSIBILITY SECTION -->
+    <section id="accessibility" class="section-padding accessibility-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Accessibility & Inclusion</h2>
+            </div>
+            <div class="a11y-grid">
+                <div class="a11y-text">
+                    <h3>Commitment to Equity</h3>
+                    <p>Leveraging my background as a Child Life Specialist and Deaf Educator, I approach instruction through a trauma-informed lens. My classroom is designed to be a space where cognitive diversity is respected, and barriers to entry are systematically removed.</p>
+                    <p>I ensure that all digital and physical course materials meet strict compliance standards while remaining engaging and human-centric.</p>
+                   
+                    <div class="a11y-standards">
+                        <span class="tag">WCAG 2.1 AA/AAA</span>
+                        <span class="tag">Section 508 Compliance</span>
+                        <span class="tag">Closed Captioning Workflows</span>
+                        <span class="tag">Equitable ASL Pedagogy</span>
+                        <span class="tag">Trauma-Informed Teaching</span>
+                    </div>
+                </div>
+                <div class="a11y-icon" style="text-align: center;">
+                    <!-- Universal Access SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="var(--accent-teal)" style="width: 150px; height: 150px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+            </div>
+            <div class="contact-wrapper">
+                <p>I am always open to discussing curriculum development, academic collaboration, or speaking engagements.</p>
+               
+                <form class="contact-form" onsubmit="sendEmail(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Your Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" class="form-control" placeholder="How can I assist you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+
+                <div class="resume-note">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg>
+                    <span>A tailored résumé or complete Curriculum Vitae is available upon request.</span>
+                </div>
+
+                <p style="margin-top: 16px; font-size: 0.95rem;">
+                    You may also email me directly at
+                    <a href="mailto:signingsongssherri@gmail.com">signingsongssherri@gmail.com</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="color: white; margin-bottom: 10px;">Dr. Sherri Schieferstein</h3>
+                <p>&copy; 2023 Dr. Sherri Schieferstein. All Rights Reserved.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">Designed for Accessibility & Performance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Active Link Highlighting on Scroll
+        const sections = document.querySelectorAll('section');
+        const navLi = document.querySelectorAll('nav ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+           
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(li => {
+                li.classList.remove('active');
+                if (li.getAttribute('href').includes(current)) {
+                    li.classList.add('active');
+                }
+            });
+        });
+
+        // Contact form -> open mail client with pre-filled email
+        function sendEmail(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const fromEmail = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const subject = encodeURIComponent('Website inquiry from ' + (name || 'Prospective Contact'));
+
+            const body = encodeURIComponent(
+                'Name: ' + name + '\n' +
+                'Email: ' + fromEmail + '\n\n' +
+                message
+            );
+
+            const sherriEmail = 'signingsongssherri@gmail.com';
+
+            window.location.href = `mailto:${sherriEmail}?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
